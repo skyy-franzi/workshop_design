@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
+
+Route::any('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
+
+Route::any('/signup', [App\Http\Controllers\LoginController::class, 'signup'])->name('signup');
+Route::any('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
