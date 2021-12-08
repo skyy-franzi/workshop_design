@@ -38,6 +38,8 @@ Route::any('/overview/offer/create', [App\Http\Controllers\OfferCreateController
 
 Route::any('/overview/message', [App\Http\Controllers\NewMessageController::class, ''])->name('message');
 
+Route::any('/chat/{offer_id}', [App\Http\Controllers\ChatController::class, 'channel'])->name('chat.channel');
+
 
 Route::get('/notification', function () {
     return view('notification');

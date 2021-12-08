@@ -4,7 +4,6 @@
 @section('title', 'Detail')
 
 @section('content')
-
     <div class="container">
         <div class="card">
              <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/GrobwWXuvTMgehN8bID_IFA5BSOKFiZsAG7wLQszDHOrIPGmrP-uyvucbu2T4-SwUld9uRLJUAyiS0r4aCJs7h3O_Q6CgvAD2GymYwzF66v7gQ8-E5fj3OCNVDlIztb6IAuC">
@@ -26,8 +25,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 @endsection
