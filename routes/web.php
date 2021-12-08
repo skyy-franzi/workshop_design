@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatController;
+use App\Http\Middleware\CheckStatus;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,29 @@ Route::any('/login', [App\Http\Controllers\LoginController::class, 'login'])->na
 
 Route::any('/signup', [App\Http\Controllers\LoginController::class, 'signup'])->name('signup');
 Route::any('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+
+Route::middleware([CheckStatus::class])->group(function(){
+    Route::any('/profile/edit/', [App\Http\Controllers\ProfileController::class, 'editProfile'])->name('profile.edit');
+    Route::any('/profile/show/', [App\Http\Controllers\ProfileController::class, 'showProfile'])->name('profile.show');
+});
+
+Route::any('/page/about', [App\Http\Controllers\PageController::class, 'about'])->name('page.about');
+Route::any('/page/show', [App\Http\Controllers\PageController::class, 'show'])->name('page.show');
+
+Route::any('/overview/offer/', [App\Http\Controllers\OfferController::class, 'index'])->name('offer.index');
+Route::any('/overview/offer/show/{id}', [App\Http\Controllers\OfferController::class, 'show'])->name('offer.show');
+Route::any('/overview/offer/create', [App\Http\Controllers\OfferCreateController::class, 'create'])->name('offer.create');
+
+Route::any('/overview/message', [App\Http\Controllers\NewMessageController::class, ''])->name('message');
+
+
+Route::get('/notification', function () {
+    return view('notification');
+});
+
+Route::get('send',[ChatController::class, 'notification']);
+
+
+
+
+

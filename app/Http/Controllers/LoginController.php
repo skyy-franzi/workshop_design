@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Service\LoginService;
 use App\Service\MessageService;
-use App\Service\UserChecker;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -60,16 +59,11 @@ class LoginController extends Controller
             }
         }
 
-        return view('register');
+        return view('signup');
     }
 
     public function dashboard(Request $request)
     {
-        $check = new UserChecker();
-        if (!$check->check('user')) {
-            return redirect('/login');
-        }
-
         $userSession = $request->session()->get('loginUser');
         $activeUser = User::find($userSession);
         $activeUsername = $activeUser->username;
