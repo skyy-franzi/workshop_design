@@ -34,7 +34,14 @@ class ProfileController
 
     public function showProfile(){
 
-        return view('profile/show');
+        $id = session('loginUser');
+
+        $user = User::find($id);
+
+
+        return view('profile/show', [
+            'user' => $user
+            ]);
 
     }
 

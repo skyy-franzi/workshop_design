@@ -38,7 +38,8 @@ Route::any('/overview/offer/create', [App\Http\Controllers\OfferCreateController
 
 Route::any('/overview/message', [App\Http\Controllers\NewMessageController::class, ''])->name('message');
 
-Route::any('/chat/{offer_id}', [App\Http\Controllers\ChatController::class, 'channel'])->name('chat.channel');
+Route::any('/chat/{offer_id}/{sender_user_id}', [App\Http\Controllers\ChatController::class, 'channel'])->name('chat.channel');
+Route::any('/chat/list', [App\Http\Controllers\ChatController::class, 'list'])->name('chat.list');
 
 
 Route::get('/notification', function () {

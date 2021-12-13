@@ -10,15 +10,7 @@
             <form method="POST" action="{{ route('offer.create') }}">
                 <div class="form-group">
                     <div class="form-group">
-                        <div class="file-field">
-                            <div class="btn btn-primary btn-sm float-left">
-                                <span>Choose file</span>
-                                <input type="file">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Upload your file">
-                            </div>
-                        </div>
+
 
                         <label for="offer_date">Date:
                             <input type="date" name="offer_date" class="form-control" value="" style="width: 400px;"/></label><br>
