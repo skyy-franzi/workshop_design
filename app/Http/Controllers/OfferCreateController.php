@@ -36,7 +36,7 @@ class OfferCreateController
             $offers->save();
 
 
-            return redirect('overview/offer/create/' . $offers->id);
+            return redirect('overview/offer/show/' . $offers->id);
         }
 
         return view('overview/offer/create');

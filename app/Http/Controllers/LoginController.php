@@ -15,7 +15,7 @@ class LoginController extends Controller
             $login = new LoginService();
             $loginCheck = $login->login($request->input('username'), $request->input('password'));
             if ($loginCheck) {
-                return redirect('/dashboard');
+                return redirect('/profile/show/');
             }
         }
 
