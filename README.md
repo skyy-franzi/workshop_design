@@ -1,1 +1,1 @@
-ShareMa - Foosharing App in PHP Laravel
+ShareMa - Foodsharing App in PHP Laravel
